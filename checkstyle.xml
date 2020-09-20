@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" 
+   "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!-- ********************************************************************** -->
+<!-- Checkstyle Rules                                                       -->
+<!--                                                                        -->
+<!-- See http://checkstyle.sourceforge.io for documentation on each rule.   -->
+<!--                                                                        -->
+<!-- Note that we are only using checkstyle to enforce rules relating to    -->
+<!-- comments and whitespace here.  We are not using it to enforce actual   -->
+<!-- coding rules, since that is assumed to be done via PMD.                -->
+<!-- ********************************************************************** -->
+
+<module name = "Checker">
+
+    <!-- ******************************************************************* -->
+    <!-- Checks for All Files                                                -->
+    <!-- ******************************************************************* -->
+
+    <!-- don't allow tab chars -->
+    <module name="FileTabCharacter"/>
+
+    <!-- ******************************************************************* -->
+    <!-- Checks for Java Files                                               -->
+    <!-- ******************************************************************* -->
+
+    <module name="TreeWalker">
+
+        <!-- allow checks to be suppressed via comments -->
+        <module name="SuppressionCommentFilter"/>
+
+        <!-- **************************************************************** -->
+        <!-- Checks for "Javadoc Comments" Category                           -->
+        <!-- **************************************************************** -->
+
+        <!-- skipping module AtclauseOrder -->
+          
+        <!-- don't allow placement of rogue javadoc blocks -->
+        <module name="InvalidJavadocPosition"/>
+
+        <!-- require javadoc tags to be left justified -->
+        <module name="JavadocBlockTagLocation"/>
+
+        <!-- skipping module JavadocContentLocation (not found) (TODO: retry) -->
+
+        <!-- check completeness of javadoc for methods -->
+        <module name="JavadocMethod"/>
+
+        <!-- skipping module JavadocMissingWhitespaceAfterAsterix (not found) -->
+
+        <!-- skipping module JavadocPackage -->
+
+        <!-- skipping module JavadocParagraph -->
+
+        <!-- require javadoc comments to be well formed (first sentence ends in proper punctuation, embedded html tags are well formed) -->
+        <module name="JavadocStyle"/>
+
+        <!-- require javadoc continuation lines to be indented 4 spaces -->
+        <module name="JavadocTagContinuationIndentation"/>
+
+        <!-- check completeness of javadoc for class/interface/enum/annotation -->
+        <module name="JavadocType"/>
+
+        <!-- require javadoc comment for variables -->
+        <module name="JavadocVariable"/>
+
+        <!-- require javadoc comments for methods -->
+        <module name="MissingJavadocMethod"/>
+
+        <!-- skipping module MissingJavadocPackage -->
+
+        <!-- require javadoc comments for class/interface/enum/annotation -->
+        <module name="MissingJavadocType"/>
+
+        <!-- require non-empty comment for javadoc tags --> 
+        <module name="NonEmptyAtclauseDescription"/>
+
+        <!-- skipping module SingleLineJavadoc -->
+
+        <!-- skipping module SummaryJavadoc -->
+
+        <!-- skipping module WriteTag -->         
+
+        <!-- **************************************************************** -->
+        <!-- Checks for "Miscellaneous" Category                              -->
+        <!-- **************************************************************** -->
+          
+        <!-- skipping module ArrayTypeStyle -->         
+
+        <!-- skipping module AvoidEscapedUnicodeCharacters -->         
+
+        <!-- skipping module CommentsIndentation -->
+
+        <!-- skipping module DescendantToken -->         
+
+        <!-- skipping module FinalParameters -->         
+
+        <!-- enforce various indentation conventions --> 
+        <module name="Indentation">
+            <!-- indentation level of 4 spaces for array init -->
+            <property name="arrayInitIndent" value="4"/>
+
+            <!-- indentation level of 4 spaces in general -->
+            <property name="basicOffset" value="4"/>
+
+            <!-- no indentation for left brace -->
+            <property name="braceAdjustment" value="0"/>
+
+            <!-- no indentation for case -->
+            <property name="caseIndent" value="4"/>
+
+            <!-- indentation level of at least 4 spaces for continuation lines -->
+            <property name="lineWrappingIndentation" value="4"/>
+
+            <!-- indentation level of 4 spaces for throws -->
+            <property name="throwsIndent" value="4"/>
+        </module>
+
+        <!-- skipping module NewlineAtEndOfFile (not found) (TODO - retry) -->         
+
+        <!-- skipping module OrderedProperties -->         
+
+        <!-- skipping module OuterTypeFilename -->         
+
+        <!-- require TODO comment to start with "TODO:" -->  
+        <module name="TodoComment"/>       
+
+        <!-- skipping module TrailingComment -->         
+
+        <!-- skipping module Translation -->         
+
+        <!-- skipiping module UncommentedMain -->         
+
+        <!-- skipping module UniqueProperties -->         
+
+        <!-- skipping module UpperEll -->         
+
+        <!-- **************************************************************** -->
+        <!-- Checks for "Whitespace" Category                                 -->
+        <!-- **************************************************************** -->
+          
+        <!-- don't allow ws before empty initializer in for loop -->
+        <module name="EmptyForInitializerPad"/>
+
+        <!-- don't allow ws after empty iterator in for loop -->
+        <module name="EmptyForIteratorPad"/>
+
+        <!-- require empty line after pkg def, imports, class def, init block, method def, variable def -->
+        <module name="EmptyLineSeparator"/>
+
+        <!-- skipping module FileTabCharacter -->         
+
+        <!-- enforce standard ws usage around generic brackets -->
+        <module name="GenericWhitespace"/>
+
+        <!-- don't allow ws between method and left paren -->
+        <module name="MethodParamPad"/>
+
+        <!-- don't allow line wrap on pkg def, imports -->
+        <module name="NoLineWrap"/>
+
+        <!-- don't allow ws after these tokens -->
+        <module name="NoWhitespaceAfter">
+            <property name="tokens" value="ARRAY_INIT,AT,INC,DEC,UNARY_MINUS,UNARY_PLUS,BNOT,DOT,ARRAY_DECLARATOR,INDEX_OP"/>
+        </module>
+
+        <!-- don't allow ws before these tokens (LABELED_STAT not found)-->
+        <module name="NoWhitespaceBefore">
+            <property name="tokens" value="COMMA,SEMI,POST_INC,POST_DEC,ELLIPSIS,DOT"/>
+        </module>
+
+        <!-- skipping module OperatorWrap -->
+
+        <!-- don't allow ws after left paren or before right paren for annotation, expr, try/catch, do/for/while, if/else, new, switch, sync, method, question, lambda -->
+        <module name="ParenPad"/>
+
+        <!-- require wrapped separator to be at end of line for dot -->
+        <module name="SeparatorWrap">
+            <property name="option" value="eol"/>
+            <property name="tokens" value="DOT"/>
+        </module>
+
+        <!-- don't allow multiple ws between non-ws chars (excluding comments) -->
+        <module name="SingleSpaceSeparator"/>
+
+        <!-- don't allow ws after left paren or before right paren in casts -->
+        <module name="TypecastParenPad"/>
+
+        <!-- require ws after these tokens -->
+        <module name="WhitespaceAfter">
+            <property name="tokens" value="COMMA,SEMI,LITERAL_IF,LITERAL_ELSE,LITERAL_WHILE,LITERAL_DO,LITERAL_FOR,DO_WHILE"/>
+        </module>
+
+        <!-- require ws around empty method/block, assign, boolean, colon, equal/inequality, arithmetic, shift, assert, try/catch, do/for/while, if/else, switch, sync, return -->
+        <module name="WhitespaceAround"/>
+
+    </module>
+
+</module>
+

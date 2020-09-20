@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    SpringBoot uses Logback by default to perform logging.  Here we configure it to point back to logging configuration
+    in SpringBoot.  This is only needed whhen running JUnits, where the SpringBoot framework is not necessarily
+    running.
+-->
+
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+</configuration>
